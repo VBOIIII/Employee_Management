@@ -1,0 +1,93 @@
+/* Overall Ongoing Box (container) */
+.ongoing-box {
+    background: linear-gradient(to right, #434343 0%, #000000 100%); /* Modern gradient background */
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    width: 100%;
+    overflow: hidden;
+    color: #ffffff; /* Default text color for the box */
+}
+
+/* Title inside the Ongoing Box */
+.ongoing-box h3,
+.ongoing-title {
+    font-size: 1.8em; /* Slightly larger title */
+    font-weight: 700; /* Bolder title */
+    color: #ffffff;
+    margin: 0 0 25px;
+    text-align: center;
+    text-transform: uppercase; /* Uppercase for a modern look */
+    letter-spacing: 1.5px;
+}
+
+/* List of Ongoing Tasks */
+.ongoing-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Slightly larger gap */
+}
+
+/* Each Task Card */
+.ongoing-item {
+    background-color: #282828; /* Darker background for cards */
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 18px;
+    color: #e0e0e0; /* Lighter text for contrast */
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: all 0.3s ease;
+    position: relative; /* Needed for the before element */
+}
+
+/* Add a subtle left border for visual interest */
+.ongoing-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #007bff; /* A/blue accent color */
+    border-radius: 12px 0 0 12px;
+}
+
+/* When a task is active (highlighted based on time) */
+.ongoing-item.highlighted {
+    background: linear-gradient(to right, #1e1e1e 0%, #3a3a3a 100%); /* Gradient for highlighted item */
+    border-color: #007bff; /* Blue border when highlighted */
+    color: #ffffff;
+    font-weight: bold;
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* More prominent shadow when highlighted */
+}
+
+/* Task Title (label) */
+.ongoing-label {
+    display: block;
+    font-size: 1.3em; /* Larger label */
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ffffff; /* White color for the label */
+}
+
+/* Task Time */
+.ongoing-time {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #bbbbbb; /* Lighter color for time */
+}
+
+/* Employee Info */
+.employee-info {
+    font-size: 0.9em;
+    color: #888888; 
+}
+
+
+#ongoingTaskList {
+    overflow-x: hidden;
+}

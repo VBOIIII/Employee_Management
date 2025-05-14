@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5dc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #a9a9a9;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 1500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboard-container {
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    width: 140%;
+    max-width: 1400px;
+    margin-left: 70px;
+    margin-right: auto;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.employee-box {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 95%;
+}
+
+.employee-id-name {
+    background-color: #a9a9a9;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.schedule-list {
+    background-color: #c0c0c0;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    font-size: 0.95em;
+}
+
+.schedule-item.break, .schedule-item.lunch {
+    background-color: #f08080;
+    color: white;
+}
+
+.schedule-item .label {
+    font-weight: bold;
+}
+
+.request-box {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 95%;
+}
+
+.request-box h3 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.request-table {
+    background-color: #c0c0c0;
+    border-radius: 6px;
+    overflow: auto;
+    font-size: 0.9em;
+}
+
+.request-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.request-table th,
+.request-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #b0b0b0;
+    white-space: nowrap;
+    border-right: 1px solid white;
+}
+
+.request-table th {
+    background-color: #b0b0b0;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.request-table th:last-child,
+.request-table td:last-child {
+    border-right: none;
+}
+
+.request-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.calendar-box {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 70%;
+}
+
+.calendar-header {
+    background-color: #a9a9a9;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 3px;
+}
+
+.day-name {
+    font-weight: bold;
+    color: #555;
+    padding: 2px;
+}
+
+.day {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 4px 0;
+    color: #333;
+}
+
+.day.today {
+    background-color: #8fbc8f;
+    color: white;
+    font-weight: bold;
+}
+
+.day.empty {
+    background: none;
+}
+
+.ongoing-box {
+    background-color: #d3d3d3;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.ongoing-box h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.ongoing-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.current-task {
+    background-color: #a9a9a9;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-task .label {
+    font-weight: bold;
+}

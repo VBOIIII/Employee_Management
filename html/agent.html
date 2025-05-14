@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent Dashboard</title>
+    <link rel="stylesheet" href="../style/agent.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Employee Management System</h1>
+    </div>
+    <div class="dashboard-container">
+        <div class="left-panel">
+            <div class="employee-box">
+                <div class="employee-id-name">Employee ID & Name</div>
+                <div class="schedule-list">
+                    <div class="schedule-item"><span class="label">Open</span><span class="time">10:00 - 12:00</span></div>
+                    <div class="schedule-item break"><span class="label">Break</span><span class="time">12:00 - 12:15</span></div>
+                    <div class="schedule-item"><span class="label">Open</span><span class="time">1:00 - 3:00</span></div>
+                    <div class="schedule-item lunch"><span class="label">Lunch</span><span class="time">3:00 - 4:00</span></div>
+                    <div class="schedule-item"><span class="label">Open</span><span class="time">4:00 - 5:30</span></div>
+                    <div class="schedule-item break"><span class="label">Break</span><span class="time">5:30 - 5:45</span></div>
+                    <div class="schedule-item"><span class="label">Open</span><span class="time">5:45 - 7:00</span></div>
+                </div>
+            </div>
+            <div class="request-box">
+                <h3>Requests</h3>
+                <div class="request-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Request</th>
+                                <th>Remarks</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="calendar-box">
+                <div class="calendar-header">
+                    <h2 id="datetime"></h2>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                </div>
+            </div>
+            <div class="ongoing-box">
+                <h3>Ongoing</h3>
+                <div class="ongoing-task-list">
+                    <div class="current-task">
+                        <div class="label">Open</div>
+                        <div class="time">10:00 - 12:00</div>
+                    </div>
+                    <div class="current-task">
+                        <div class="label">Meeting</div>
+                        <div class="time">2:00 - 3:00</div>
+                    </div>
+                    <div class="current-task">
+                        <div class="label"></div>
+                        <div class="time"></div>
+                    </div>
+                    <div class="current-task">
+                        <div class="label"></div>
+                        <div class="time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            const month = monthNames[now.getMonth()];
+            const year = now.getFullYear();
+            let hours = now.getHours();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timezoneShort = Intl.DateTimeFormat(undefined, { timeZoneName: 'short' }).format(now).split(' ')[2] || '';
+
+            document.getElementById('datetime').textContent = `${month} ${year} ${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm} ${timezoneShort}`;
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        function generateCalendar() {
+            const calendarGrid = document.getElementById("calendarGrid");
+            calendarGrid.innerHTML = "";
+
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const today = now.getDate();
+
+            const date = new Date(year, month, 1);
+            const firstDayIndex = date.getDay();
+            const lastDay = new Date(year, month + 1, 0).getDate();
+
+            const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+            weekdays.forEach(day => {
+                const dayEl = document.createElement("div");
+                dayEl.className = "day-name";
+                dayEl.textContent = day;
+                calendarGrid.appendChild(dayEl);
+            });
+
+            for (let i = 0; i < firstDayIndex; i++) {
+                const empty = document.createElement("div");
+                empty.className = "day empty";
+                calendarGrid.appendChild(empty);
+            }
+
+            for (let day = 1; day <= lastDay; day++) {
+                const dayEl = document.createElement("div");
+                dayEl.className = "day";
+                if (day === today) {
+                    dayEl.classList.add("today");
+                }
+                dayEl.textContent = day;
+                calendarGrid.appendChild(dayEl);
+            }
+        }
+
+        generateCalendar();
+    </script>
+</body>
+</html>
