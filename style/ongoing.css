@@ -1,92 +1,95 @@
+/* ongoing.css */
+
 /* Overall Ongoing Box (container) */
 .ongoing-box {
-    background: linear-gradient(to right, #434343 0%, #000000 100%); /* Modern gradient background */
-    border-radius: 16px;
-    padding: 20px;
+    background: #2d3436; 
+    border-radius: 12px;
+    padding: 25px; 
     margin-top: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* More pronounced shadow */
+    box-shadow: 0 8px 16px rgba(232, 226, 226, 0.2); 
     width: 100%;
+    margin-left: 8%;
     overflow: hidden;
-    color: #ffffff; /* Default text color for the box */
+    color: #ffffff;
+
 }
 
 /* Title inside the Ongoing Box */
 .ongoing-box h3,
 .ongoing-title {
-    font-size: 1.8em; /* Slightly larger title */
-    font-weight: 700; /* Bolder title */
+    font-size: 1.6em; /* Slightly smaller, refined title */
+    font-weight: 600; /* Less bold */
     color: #ffffff;
-    margin: 0 0 25px;
-    text-align: center;
-    text-transform: uppercase; /* Uppercase for a modern look */
-    letter-spacing: 1.5px;
+    margin: 0 0 20px; /* Adjusted margin */
+    text-align: left; /* Left-aligned title */
+    border-bottom: 1px solid #444; /* Underline */
+    padding-bottom: 10px;
 }
 
 /* List of Ongoing Tasks */
 .ongoing-task-list {
     display: flex;
     flex-direction: column;
-    gap: 18px; /* Slightly larger gap */
+    gap: 15px; /* Adjusted gap */
 }
 
 /* Each Task Card */
 .ongoing-item {
-    background-color: #282828; /* Darker background for cards */
-    border: 1px solid #555;
-    border-radius: 12px;
-    padding: 18px;
-    color: #e0e0e0; /* Lighter text for contrast */
-    font-size: 1.1em;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
-    transition: all 0.3s ease;
-    position: relative; /* Needed for the before element */
+    background-color: #37474F; /* Slightly lighter card background */
+    border-radius: 8px;
+    padding: 15px;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    border: 1px solid #455A64; /* Subtle border */
 }
 
-/* Add a subtle left border for visual interest */
+/* Subtle left border for visual interest */
 .ongoing-item::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 5px;
-    background-color: #007bff; /* A/blue accent color */
-    border-radius: 12px 0 0 12px;
+    width: 4px;
+    background-color: #8FBC8F; /* Muted green accent */
+    border-radius: 8px 0 0 8px;
 }
 
-/* When a task is active (highlighted based on time) */
+/* When a task is active (highlighted) */
 .ongoing-item.highlighted {
-    background: linear-gradient(to right, #1e1e1e 0%, #3a3a3a 100%); /* Gradient for highlighted item */
-    border-color: #007bff; /* Blue border when highlighted */
+    background-color: #455A64; /* Darker highlight */
+    border-color: #8FBC8F;
     color: #ffffff;
-    font-weight: bold;
-    transform: translateY(-3px); /* Subtle lift effect */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* More prominent shadow when highlighted */
+    font-weight: 500; /* Less bold highlight */
+    transform: translateY(-2px); /* Smaller lift */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More subtle highlight shadow */
 }
 
 /* Task Title (label) */
 .ongoing-label {
     display: block;
-    font-size: 1.3em; /* Larger label */
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #ffffff; /* White color for the label */
+    font-size: 1.1em; /* Smaller label */
+    font-weight: 600;
+    margin-bottom: 4px; /* Reduced margin */
+    color: #ffffff;
 }
 
 /* Task Time */
 .ongoing-time {
     display: block;
-    font-size: 1em;
-    margin-bottom: 10px;
-    color: #bbbbbb; /* Lighter color for time */
+    font-size: 0.9em;
+    margin-bottom: 8px; /* Reduced margin */
+    color: #B0BEC5; /* Lighter time color */
 }
 
 /* Employee Info */
 .employee-info {
-    font-size: 0.9em;
-    color: #888888; 
+    font-size: 0.85em;
+    color: #90A4AE; /* Muted employee info */
 }
-
 
 #ongoingTaskList {
     overflow-x: hidden;

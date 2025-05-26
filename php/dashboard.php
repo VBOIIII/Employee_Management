@@ -97,7 +97,9 @@ $requestStmt->close();
 <body>
     <div class="header">
         <h1>Employee Management System</h1>
+        <a href="logout.php" class="logout-button">Logout</a>
     </div>
+    
     <div class="dashboard-container">
         <div class="left-panel">
             <div class="employee-box">
@@ -193,28 +195,7 @@ $requestStmt->close();
 
                     </div>
 
-                    <div id="scheduleModal" style="display:none;">
-                        <div class="modal-content">
-                            <span id="closeModalBtn" class="close-btn">&times;</span>
-                            <h3 class="modal-title">Add Schedule</h3>
-                            <form method="POST" action="" id="add_schedule_form" class="add-schedule-form">
-                                <input type="hidden" name="emid" id="selected_emid" value="">
-                                <input type="hidden" name="schedule_id" id="schedule_id_input" value="">
-                                <label for="schedule_label">Schedule Label:</label>
-                                <select name="schedule_label" id="schedule_label" required>
-                                    <option value="">-- Select --</option>
-                                    <option value="Meeting">Meeting</option>
-                                    <option value="Training">Training</option>
-                                    <option value="Break">Break</option>
-                                </select>
-                                <label for="start_time">Start Time:</label>
-                                <input type="time" name="start_time" id="start_time" required>
-                                <label for="end_time">End Time:</label>
-                                <input type="time" name="end_time" id="end_time" required>
-                                <button type="submit" class="submit-btn">Add Schedule</button>
-                            </form>
-                        </div>
-                    </div>
+                    
 
                     <script>
                         let currentEmployeeId = null;
@@ -430,8 +411,8 @@ $requestStmt->close();
                 </select>
                 <?php endif; ?>
 
-                <div class="request-table">
-                    <table>
+                <div class="request-table" style="max-height: 200px; overflow: auto;">
+                        <table style="min-width: 200px; white-space: nowrap;">
                         <thead>
                             <tr>
                                 <th>Employee ID</th>
@@ -731,7 +712,34 @@ $(document).ready(function() {
                 currentSlide++;
                 if (currentSlide >= slides.length) currentSlide = 0;
             }
+    
 
         </script>
+
+        <div id="scheduleModal" style="display:none;">
+                        <div class="modal-content">
+                            <span id="closeModalBtn" class="close-btn">&times;</span>
+                            <h3 class="modal-title">Add Schedule</h3>
+                            <form method="POST" action="" id="add_schedule_form" class="add-schedule-form">
+                                <input type="hidden" name="emid" id="selected_emid" value="">
+                                <input type="hidden" name="schedule_id" id="schedule_id_input" value="">
+                                <label for="schedule_label">Schedule Label:</label>
+                                <select name="schedule_label" id="schedule_label" required>
+                                    <option value="">-- Select --</option>
+                                    <option value="Meeting">Meeting</option>
+                                    <option value="Training">Training</option>
+                                    <option value="Break">Break</option>
+                                    <option value="Open">Open</option>
+                                </select>
+                                <label for="start_time">Start Time:</label>
+                                <input type="time" name="start_time" id="start_time" required>
+                                <label for="end_time">End Time:</label>
+                                <input type="time" name="end_time" id="end_time" required>
+                                <button type="submit" class="submit-btn">Add Schedule</button>
+                            </form>
+                        </div>
+                    </div>
+
+        
     </body>
     </html>

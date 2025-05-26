@@ -1,104 +1,122 @@
+/* login.css */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f8; /* Changed */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s ease; /* Added smooth transition */
 }
 
 .login-container {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: white;
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Changed */
+    width: 90%;
+    max-width: 450px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease; /* Added transition */
 }
 
 .login-box {
-    background-color: #B3B3B3;
-    padding: 50px;
+    background-color: #eceff1; /* Changed */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: background-color 0.3s ease; /* Added for consistency */
 }
 
 .company-logo {
-    margin-bottom: 30px;
-    color: #4a4a4a;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Added smooth transition */
 }
 
 h1 {
-    color: #4a4a4a;
-    margin-bottom: 30px;
-    font-size: 24px;
+    color: #333; /* Changed */
+    margin-bottom: 25px;
+    font-size: 2em;
     font-weight: 500;
+    transition: color 0.3s ease; /* Added smooth transition */
 }
 
 .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 label {
     display: block;
-    color: #4a4a4a;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-label i {
-    margin-right: 8px;
-    color: #4a4a4a;
+    color: #555; /* Changed */
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1em;
+    transition: color 0.3s ease; /* Added label transition */
 }
 
 input[type="text"],
 input[type="password"] {
-    width: calc(100% - 30px);
+    width: calc(100% - 20px);
     padding: 12px;
-    border: 1px solid #999999;
+    border: 1px solid #b0bec5; /* Changed */
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 1em;
     box-sizing: border-box;
-    color: #333333;
-    background-color: #E0E0E0;
+    color: #333;
+    background-color: #f9f9f9; /* Changed */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; /* Added box-shadow and background transition*/
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-    border-color: #4a4a4a;
+    border-color: #4CAF50; /* Changed */
     outline: none;
-    box-shadow: 0 0 8px rgba(74, 74, 74, 0.5);
+    box-shadow: 0 0 5px rgba(85, 107, 47, 0.3);
+    background-color: #fff; /* Lighten background on focus */
 }
 
-.login-button {
-    background-color: #4a4a4a;
-    color: #E0E0E0;
-    padding: 14px 20px;
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #546e7a; /* Changed */
+    color: white;
     border: none;
     border-radius: 6px;
-    font-size: 18px;
+    font-size: 1.1em;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-button i {
-    margin-right: 8px;
+button[type="submit"]:hover {
+    background-color: #455a64; /* Changed */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.login-button:hover {
-    background-color: #666666;
+.forgot-password {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: center;
+    transition: color 0.3s ease; /* Added transition */
+}
+
+.forgot-password a {
+    color: #4a148c; /* Changed */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Added transition */
 }
 
 .error-message {
-    color: red;
-    font-weight: bold;
-    margin-top: 5px;
+    color: #d32f2f; /* Changed */
+    margin-top: 10px;
     font-size: 0.9em;
+    font-weight: 400;
 }
